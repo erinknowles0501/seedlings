@@ -1,37 +1,37 @@
-data = [
-	{
-		"name": '',
-		"type": 1,
-		"area": "crystal crescent"
-	},
-	{
-		"name": 'bellyboy',
-		"type": 5,
-		"area": "helllllo"
-	},
-	{
-		"name": 'sssss',
-		"type": 4,
-		"area": "sedgsg"
-	},
-	{
-		"name": 'sdfsdf',
-		"type": 5,
-		"area": "ghjkfyukfyk"
-	},
-	{
-		"name": 'sdgsdg',
-		"type": 6,
-		"area": "sgdgsfrgj"
-	},
-	{
-		"name": '3325',
-		"type": 2,
-		"area": "sfgjhdgjghj"
-	},
-	{
-		"name": 'xfhsgj',
-		"type": 3,
-		"area": "dfhdfdfhdfhdfh"
-	}
+[
+  {
+    "name": "",
+    "type": 1,
+    "area": "crystal crescent"
+  },
+  {
+    "name": "bellyboy",
+    "type": 5,
+    "area": "helllllo"
+  },
+  {
+    "name": "sssss",
+    "type": 4,
+    "area": "sedgsg"
+  },
+  {
+    "name": "sdfsdf",
+    "type": 5,
+    "area": "ghjkfyukfyk"
+  },
+  {
+    "name": "sdgsdg",
+    "type": 6,
+    "area": "sgdgsfrgj"
+  },
+  {
+    "name": "3325",
+    "type": 2,
+    "area": "sfgjhdgjghj"
+  },
+  {
+    "name": "xfhsgj",
+    "type": 3,
+    "area": "dfhdfdfhdfhdfh"
+  }
 ]
