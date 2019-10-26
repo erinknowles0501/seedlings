@@ -27,7 +27,7 @@
 <h3>What shall we call it?</h3>
 
 <form action="index.php" method="post">
-<input id="nameField" type="text">
+<input id="nameField" name="nameField" type="text">
 <input id="submit" type="submit" value="go!">
 </form>
 
