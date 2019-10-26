@@ -16,7 +16,7 @@
 
 <body>
 
-<?php import 'test.php'; ?>
+
 
 
 <div>
@@ -25,11 +25,16 @@
 <p><b>Type:</b> Annoying</p>
 <hr>
 <h3>What shall we call it?</h3>
+
+<form action="index.php" method="post">
 <input id="nameField" type="text">
-<input id="submit" type="button" value="go!">
+<input id="submit" type="submit" value="go!">
+</form>
 
 </div>
 
+
+<?php include 'test.php'; ?>
 
 </body>
 </html>
