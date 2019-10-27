@@ -1,0 +1,29 @@
+<?php
+        
+
+
+
+
+        
+        if (isset($_POST['submit'])) { 
+            
+            if (!$_POST['username'] | !$_POST['password'] | !$_POST['email'] ) {
+	           die('You did not complete all of the required fields');
+            }
+
+$username = $_POST["username"];
+$password = $_POST["password"];
+$email = $_POST["email"];
+
+$sql = "INSERT INTO users (username, password, email)
+VALUES ('" . $username . "', '" . $password . "', '" . $email . "')";
+
+if ($conn->query($sql) === TRUE) {
+	echo "Record success, " . $username . " has been added";
+} else {
+	echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+        }
+        
+        ?>
