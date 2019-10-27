@@ -24,7 +24,7 @@
 <p><b>Location:</b> Rogue's Roost</p>
 <p><b>Type:</b> Annoying</p>
 <hr>
-<h3>What shall we call it?</h3>
+<h3>What shall we name it?</h3>
 
 <form action="index.php" method="post">
 <input id="nameField" name="nameField" type="text">

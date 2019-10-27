@@ -23,3 +23,24 @@ if ($conn->query($sql) === TRUE) {
 }
 
 ?>
+<br><br>
+
+<?php 
+
+$sqlget = "SELECT type, location, name, shiny FROM babies";
+$result = $conn->query($sqlget);
+
+if ( $result->num_rows > 0 ) {
+	while ($row = $result->fetch_assoc()) {
+		echo $row["type"] . ", " .
+			 $row["location"] . ", " .
+			 $row["name"] . ", " .
+			 $row["shiny"] . "<br>";
+	}
+} else {
+	echo "no results :(";
+}
+
+
+
+?>
