@@ -1,3 +1,7 @@
+<?php include 'init.php' ?>
+
+<?php include 'head.php' ?>
+
 <form action="register.php" method="post">
     <input id="username" name="username" type="text">
     <input id="password" name="password" type="password">
@@ -7,3 +11,5 @@
     <input id="submit" name="submit" type="submit" value="go!">
 
 </form>
+
+<?php include 'footer.php' ?>

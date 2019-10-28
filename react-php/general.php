@@ -1,5 +1,6 @@
 <?php
-function sanitize(data) {
-    return mysqli_real_escape_string(data);
+function sanitize($data) {
+    global $conn;
+    return mysqli_real_escape_string($conn, $data);
 }
 ?>
