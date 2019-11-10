@@ -6,13 +6,23 @@
 
 
 <?php 
-    
+
+
+if (isset($_GET['alreadyloggedin']) && empty($_GET['alreadyloggedin'])) {
+    echo "<blockquote class='warning'><h3>You have to log out before accessing that page.</h3>
+    </blockquote>";
+}
+
 
 if (logged_in() === true) {
-echo 'logged in hellooo. <a href="logout.php">log out</a>';
+    include 'loggedIn.php';
 } else {
     include 'loginForm.php';
 }
+
+
+
+
 ?>
 
 
