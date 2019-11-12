@@ -4,13 +4,15 @@
 <?php include 'head.php' ?>
 
 <?php
+    
+
 
 if (empty($_POST) === false) {
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 
-if (empty($username) === true || empty($password) === true ) {
+    if (empty($username) === true || empty($password) === true ) {
         $errors[] = 'You need to enter a username and password';
     } else if ( user_exists($username) === false) {
         $errors[] = 'Entered user does not exist, check for typos?';
@@ -28,16 +30,19 @@ if (empty($username) === true || empty($password) === true ) {
         }
     }
     
-} else {
-    header('Location: index.php');
+    if (empty($errors) === false) {
+        echo "<blockquote class='error'><h3>We tried to log you in but encountered the following error/s:</h3>";
+        foreach($errors as $error) {
+            echo "<li>" . $error . "</li>";
+        }
+        echo "</blockquote>";
+    }
+
 }
 
-if (empty($errors) === false) {
-    echo "<h3>We tried to log you in but encountered the following error/s:</h3>";
-    foreach($errors as $error) {
-        echo "<li>" . $error . "</li>";
-    }
-}
+
+
+include 'loginForm.php';
 
 ?>
 

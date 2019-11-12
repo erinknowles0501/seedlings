@@ -5,6 +5,7 @@ session_start();
 require 'connect.php';
 require 'general.php';
 require 'users.php';
+require 'seed_functions.php';
 
 if (logged_in() === true) {
     $session_user_id = $_SESSION['user_id'];

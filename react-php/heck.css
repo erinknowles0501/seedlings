@@ -1,41 +1,33 @@
-/*
 
-header {
-    background: #DDD;
-    margin-top: 0;
-    padding-top: 1vh;
-    border-radius: 2vh;
+blockquote {
+    font-style: normal;
+    padding: 3vh;
 }
 
-
-nav {
-    display: block;
+blockquote h3 {
+    margin: 0;
+    padding: 0;
 }
 
-nav li {
-    list-style: none;
-    float: left;
-}
-
-nav a {
-    text-decoration: none;
-}
-*/
-
-
-
-blockquote.errors {
+.error {
     border-left-color: red;
     background: #FFCC99;
-    padding: 2vh;
 }
 
-blockquote.success {
+.success {
     border-left-color: green;
     background: #DDFFDD;
-    padding: 2vh;
 }
 
 .warning {
     border-left-color: orange;
+}
+
+section {
+    margin: 4vh;
+}
+
+.display-seed {
+    background: #EEE;
+    margin: 4vh;
 }

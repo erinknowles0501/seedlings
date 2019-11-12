@@ -4,6 +4,29 @@
 
 <!-- include check for making sure fields length isn't MORE than what mysql is expecting, and make sure username doesn't include spaces or special characters -->
 
+<!-- structure, for debugging:
+if POST is not empty:
+    if required fields are empty:
+        error,
+        break
+    if there are no errors:
+        if user already exists: error
+        if email already exists: error
+        if username contains spaces: error
+        if email is not an email: error
+        if password is not 6+ chars: error
+        if passwords do not match: error
+    if POST is not empty AND there are no errors:
+        register user,
+        header redirect,
+        exit
+if errors is not empty,
+    display errors
+
+
+
+-->
+
 <?php
     if (empty($_POST) === false) {
         $required_fields = array('username', 'password', 'password_again', 'email');
@@ -42,28 +65,29 @@
             
             
         }
-    }
 
-// if there's data and no errors, register user:
-if ( empty($_POST) === false && empty($errors) === true ) {
-    $register_data = array(
-        'username' => $_POST['username'],
-        'password' => $_POST['password'],
-        'email' => $_POST['email']
-    );
-    register_user($register_data);
-    header('Location: index.php');
+    // if there's data and no errors, register user:
+    if ( empty($_POST) === false && empty($errors) === true ) {
+        $register_data = array(
+            'username' => $_POST['username'],
+            'password' => $_POST['password'],
+            'email' => $_POST['email']
+        );
+        register_user($register_data);
+        header('Location: index.php?registersuccess');
+        exit();
+    }
 }
 
 
 ?>
-        
+
 
 <h1>Register</h1>
 
 <?php 
     if (empty($errors) === false) {
-        echo "<blockquote class='errors'><h3>Could not register: encountered the following error/s:</h3>";
+        echo "<blockquote class='error'><h3>Could not register: encountered the following error/s:</h3>";
         foreach($errors as $error) {
             echo "<li>" . $error . "</li>";
         }
@@ -72,33 +96,33 @@ if ( empty($_POST) === false && empty($errors) === true ) {
 ?>
 
 <form action="" method="POST">
-    
+
     <ul>
         <li>
             Username: <br>
             <input type="text" name="username">
         </li>
-        
+
         <li>
             Password <i>(at least 6 characters)</i>: <br>
             <input type="password" name="password">
         </li>
-        
+
         <li>
             Password again:<br>
             <input type="password" name="password_again">
         </li>
-        
+
         <li>
             Email:<br>
             <input type="email" name="email">
         </li>
-        
+
         <li>
             <button>Register</button>
         </li>
     </ul>
-    
+
 </form>
 
 

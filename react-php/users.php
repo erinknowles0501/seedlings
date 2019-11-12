@@ -13,10 +13,6 @@ function register_user($register_data) {
     
     mysqli_query($conn, $sql);
     
-    if ($conn->query($sql) === true) {
-        echo "<blockquote class='success'>User created successfully! You may now <a href='index.php'>log in</a>.</blockquote>";
-    }
-    
 }
 
 function user_data($user_id) {
@@ -49,7 +45,7 @@ function logged_in() {
     }
 }
 
-
+// == in return line has to be that way, === 1 and === true don't work
 function user_exists($username) {
     global $conn;
     $username = sanitize($username);

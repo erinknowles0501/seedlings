@@ -52,7 +52,7 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 } 
 
 if (empty($errors) === false) {
-        echo "<blockquote class='errors'><h3>Could not change password: encountered the following error/s:</h3>";
+        echo "<blockquote class='error'><h3>Could not change password: encountered the following error/s:</h3>";
         foreach($errors as $error) {
             echo "<li>" . $error . "</li>";
         }
