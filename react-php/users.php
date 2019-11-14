@@ -77,6 +77,13 @@ function user_id_from_username($username) {
     return mysqli_fetch_array($query)['user_id'];
 }
 
+function username_from_user_id($user_id) {
+    global $conn;
+    $user_id = sanitize($user_id);
+    $query = mysqli_query($conn, "SELECT `username` FROM `users` WHERE `user_id` = $user_id");
+    return mysqli_fetch_assoc($query)['username'];
+}
+
 function login($username, $password) {
     global $conn;
     $user_id = user_id_from_username($username);
@@ -97,6 +104,43 @@ function change_password($user_id, $password) {
     $password = md5($password);
     
     mysqli_query($conn, "UPDATE `users` SET `password` = '$password' WHERE `user_id` = $user_id");
+}
+
+
+function pending_friend_requests() {
+    global $session_user_id;
+    global $conn;
+    $sql = "SELECT * FROM `friends` WHERE `accepted` = 0 AND `askee_id` = $session_user_id";
+    
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0 ) {
+        $friend_requests = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            array_push($friend_requests, $row);
+        }
+        return $friend_requests;
+    } else {
+        return false;
+    }
+}
+
+function has_friends() {
+    global $session_user_id;
+    global $conn;
+    $sql = "SELECT * FROM `friends` WHERE `accepted` = 1 AND (`askee_id` = $session_user_id OR `asker_id` = $session_user_id)";
+    
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0 ) {
+        $friends = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            array_push($friends, $row);
+        }
+        return $friends;
+    } else {
+        return false;
+    }
 }
 
 ?>

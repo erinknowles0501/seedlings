@@ -18,4 +18,6 @@ $errors = array();
 // path relative to stylesheet. Leading / tends to break it.
 $profile_pic_path = "images/profile/";
 
+$user_lookup_path = "seedlings/react-php/";
+
 ?>

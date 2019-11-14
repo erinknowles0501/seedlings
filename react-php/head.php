@@ -19,10 +19,7 @@
         <?php 
             // if have pending requests!
             
-            global $conn;
-            $sql = "SELECT * FROM `friends` WHERE `asker_id` = $session_user_id OR `askee_id` = $session_user_id";
-            
-            if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0 ) {
+            if (logged_in() === true && pending_friend_requests() != false ) {
                 echo "<p class='notice'>Pending friend request/s! Check out your <a href='friends.php'>Friends</a> page to accept.</p>";
             }
             

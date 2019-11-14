@@ -1,8 +1,10 @@
+/*
 html,
 body {
     margin: 0;
     padding: 0;
 }
+*/
 
 header .notice {
     background: blue;
@@ -87,6 +89,14 @@ section {
     box-sizing: border-box;
 }
 
+.profile-pic-wrap.request {
+    height: 15vmin;
+    width: 15vmin;
+    margin: 0;
+    margin-right: 2vh;
+    float: none;
+}
+
 .profile-pic {
     background-size: cover;
     background-position: center;
@@ -96,9 +106,44 @@ section {
     padding: 0;
 }
 
+.request .profile-pic {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+}
+
+.request .profile-pic span {
+    color: white;
+    font-weight: 800;
+    text-shadow: 0 0 2rem black;
+}
+
+.request .profile-pic:hover {
+    background-size: 150%;
+}
+
+
 footer {
     display: block;
     text-align: center;
     font-style: italic;
     font-size: 0.8rem;
+}
+
+/* .request.friend-wrap */
+
+.friend-request-wrap {
+    border: 1px solid #CCCCCC;
+    border-radius: 0.8rem;
+    padding: 1.4rem;
+    margin: 1.4rem;
+    max-width: 60%;
+    display: flex;
+}
+
+.friends-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }

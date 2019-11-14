@@ -1,3 +1,40 @@
+        <div class="friend-wrap">
+            <div class="profile-pic-wrap">
+                <?php
+                // either asker_id or askee_id is $session_user_id. Get whatever the other one is.
+                $the_friend_id = "something's gone wrong";
+                if ($friend_entry['asker_id'] == $session_user_id) {
+                    $the_friend_id = $friend_entry['askee_id'];
+                }
+                else {
+                    $the_friend_id = $friend_entry['asker_id'];
+                }
+                
+                $the_friend_data = user_data($the_friend_id, 'profile_pic');
+                if (empty($the_friend_data['profile_pic']) == false ) {
+                ?>
+                    <div class="profile-pic" style="background-image: url(<?php echo $profile_pic_path . $the_friend_data['profile_pic']; ?>);"> </div>
+                <?php
+                }
+                ?>
+
+            </div>
+            <div class="friend-info-wrap">
+                <b><a href="/<?php echo $user_lookup_path . username_from_user_id($the_friend_id); ?>"><?php echo username_from_user_id($the_friend_id); ?></a></b>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
         
 

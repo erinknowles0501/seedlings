@@ -14,22 +14,23 @@ if (isset($_GET['username']) && empty($_GET['username']) === false) {
     
     if (user_exists($username) === true) {
         $user_id = user_id_from_username($username);
-        $profile_data = user_data($user_id, 'username');
+        $profile_data = user_data($user_id, 'username', 'profile_pic');
         ?>
 
     <h1><?php echo $profile_data['username']; ?>'s Profile:</h1>
 
     <div class="profile-pic-wrap">
         <?php
-        // UPDATE THIS!!!! Currently always just shows YOUR pic, not the current user's!
-        if (empty($user_data['profile_pic']) == false ) {
+            if (empty($profile_data['profile_pic']) == false ) {
         ?>
-            <div class="profile-pic" style="background-image: url(<?php echo $profile_pic_path . $user_data['profile_pic']; ?>);"> </div>
+                <div class="profile-pic" style="background-image: url(<?php echo $profile_pic_path . $profile_data['profile_pic']; ?>);"> </div>
         <?php
-        }
+            }
         ?>
 
     </div>
+
+
 
     <?php
     // add friend button if not already friends.
