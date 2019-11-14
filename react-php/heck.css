@@ -1,4 +1,40 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
 
+header .notice {
+    background: blue;
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding: 1.3rem;
+    font-size: 1rem;
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+
+header .notice a {
+    color: white;
+    text-decoration: underline;
+}
+
+header .notice a:hover {
+    text-decoration: none;
+}
+
+/*
+header .notice:before {
+    content: '';
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    background-color: red;
+    border-radius: 0.5rem;
+}
+*/
 
 blockquote {
     font-style: normal;
@@ -61,7 +97,6 @@ section {
 }
 
 footer {
-    width: 100vw;
     display: block;
     text-align: center;
     font-style: italic;

@@ -86,11 +86,7 @@ if (empty($_POST) === false) {
 
 // error handling.
     if (empty($errors) === false) {
-        echo "<blockquote class='error'><h3>Could not create seedling: encountered the following errors:</h3>";
-        foreach($errors as $error) {
-            echo "<li>" . $error . "</li>";
-        }
-        echo "</blockquote>";
+        display_errors($errors, "create seedling");
     }
     
     

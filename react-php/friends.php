@@ -40,7 +40,7 @@
     }
 
 if (empty($errors) == false) {
-    print_r($errors);
+    display_errors($errors, "add friend");
 }
         
 }

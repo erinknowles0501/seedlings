@@ -31,11 +31,7 @@ $password = $_POST['password'];
     }
     
     if (empty($errors) === false) {
-        echo "<blockquote class='error'><h3>We tried to log you in but encountered the following error/s:</h3>";
-        foreach($errors as $error) {
-            echo "<li>" . $error . "</li>";
-        }
-        echo "</blockquote>";
+        display_errors($errors, "log in");
     }
 
 }

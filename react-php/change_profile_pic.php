@@ -63,11 +63,7 @@ if (isset($_FILES['profile_pic']) === true) {
 
 // write error output function already
 if (empty($errors) === false) {
-    echo "<blockquote class='error'><h3>Could not upload image: encountered the following error/s:</h3>";
-    foreach($errors as $error) {
-        echo "<li>" . $error . "</li>";
-    }
-    echo "</blockquote>";
+    display_errors($errors, "upload image");
 }
 
 ?>
