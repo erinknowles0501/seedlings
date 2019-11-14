@@ -21,6 +21,7 @@ if (isset($_GET['username']) && empty($_GET['username']) === false) {
 
     <div class="profile-pic-wrap">
         <?php
+        // UPDATE THIS!!!! Currently always just shows YOUR pic, not the current user's!
         if (empty($user_data['profile_pic']) == false ) {
         ?>
             <div class="profile-pic" style="background-image: url(<?php echo $profile_pic_path . $user_data['profile_pic']; ?>);"> </div>
@@ -30,13 +31,15 @@ if (isset($_GET['username']) && empty($_GET['username']) === false) {
 
     </div>
 
-<?php
-    // add friend button
+    <?php
+    // add friend button if not already friends.
         
     ?>
-    <form action="" method="POST">
+    <form action="friends.php" method="POST">
+        <input type="hidden" name="askee" value="<?php echo $username; ?>">
         <button>Send friend request</button>  
     </form>
+    <?php
         
         
     } else {
