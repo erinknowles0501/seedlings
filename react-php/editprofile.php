@@ -7,8 +7,11 @@
 
 
 <h1>Edit profile</h1>
-<a href="change_password.php">Change password</a>
-<a href="activate_account.php">Activate account</a>
+<ul>
+    <li><a href="change_password.php">Change password</a></li>
+    <li><a href="activate_account.php">Activate account</a></li>
+    <li><a href="change_profile_pic.php">Change profile picture</a></li>
+</ul>
 
 
 

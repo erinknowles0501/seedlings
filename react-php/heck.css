@@ -1,4 +1,5 @@
 
+
 blockquote {
     font-style: normal;
     padding: 3vh;
@@ -25,9 +26,44 @@ blockquote h3 {
 
 section {
     margin: 4vh;
+    padding: 2vh;
+    border-radius: 1vh;
 }
 
 .display-seed {
     background: #EEE;
-    margin: 4vh;
+    margin: 1vh;
+}
+
+.seedlings-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+
+.profile-pic-wrap {
+    float: right;
+    height: 30vmin;
+    width: 30vmin;
+    margin: 1vh;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profile-pic {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    width: 100vw;
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.8rem;
 }

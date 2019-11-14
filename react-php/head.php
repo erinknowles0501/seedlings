@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Didja</title>
+        <title>Seedlings v1</title>
         <meta charset="utf-8">
         
                 
@@ -21,4 +21,5 @@
         <?php include 'nav.php' ?>
         
         
+        <main>
         <!-- CONTENT STARTS HERE -->

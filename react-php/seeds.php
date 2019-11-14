@@ -11,6 +11,7 @@
 
 
 <!-- get and display user's seeds -->
+<section class="seedlings-wrap">
 <?php 
     $seeds = array();
     $owner_id = user_id_from_username($user_data['username']);
@@ -40,6 +41,7 @@ if (mysqli_num_rows($result) > 0) {
 }
     
 ?>
+</section>
 
 
 
@@ -49,7 +51,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
-    <?php
+<?php
     
 if (empty($_POST) === false) {
     // check name is filled, it's the only required field right now:
@@ -95,22 +97,33 @@ if (empty($_POST) === false) {
     
 ?>
 
-    <!-- create seedling -->
-    <h3>Create seedling:</h3>
-    <form action="" method="post">
-        <ul>
-            <li>Seedling name:<br>
-                <input type="text" name="name"></li>
-            <li>Type:<br>
-                <select name="type_id">
-                    <option value="1">Ranch</option>
-                    <option value="2">Sea</option>
-                    <option value="3">Swamp</option>
-                </select>
-            </li>
-            <li><button>Go</button></li>
+<!-- create seedling -->
+<h3>Create seedling:</h3>
+<form action="" method="post">
+    <ul>
+        <li>Seedling name:<br>
+            <input type="text" name="name"></li>
+        <li>Type:<br>
+            <!-- get types from `seed_types` in future...DRY. -->
+            <select name="type_id">
+                <?php 
+                global $conn;
+                $sql = "SELECT `type_id`, `type` FROM `seed_types`";
+                $types = mysqli_query($conn, $sql);
 
-        </ul>
-    </form>
+                if (mysqli_num_rows($types) > 0) {
+                    while($row = mysqli_fetch_assoc($types)) {
+                        echo "<option value='" . $row['type_id'] . "'>" . $row['type'] . "</option>";
+                    }
+                } else {
+                    echo "No types defined. This error shouldn't happen, it's probably a MySQL thing. Please let the webmaster know.";
+                }
+                ?>
+            </select>
+        </li>
+        <li><button>Go</button></li>
 
-    <?php include 'footer.php' ?>
+    </ul>
+</form>
+
+<?php include 'footer.php' ?>
