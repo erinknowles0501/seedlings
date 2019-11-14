@@ -81,7 +81,6 @@ section {
 
 
 .profile-pic-wrap {
-    float: right;
     height: 30vmin;
     width: 30vmin;
     margin: 1vh;
@@ -94,7 +93,6 @@ section {
     width: 15vmin;
     margin: 0;
     margin-right: 2vh;
-    float: none;
 }
 
 .profile-pic {
@@ -146,4 +144,9 @@ footer {
 .friends-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.user-lookup-wrap {
+    display: flex;
 }

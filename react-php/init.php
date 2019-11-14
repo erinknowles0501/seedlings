@@ -10,7 +10,7 @@ require 'seed_functions.php';
 
 if (logged_in() === true) {
     $session_user_id = $_SESSION['user_id'];
-    $user_data = user_data($session_user_id, 'user_id', 'username', 'password', 'register_date', 'user_type', 'profile_pic');
+    $user_data = user_data($session_user_id, 'user_id', 'username', 'password', 'register_date', 'user_type', 'profile_pic', 'about_me');
 }
     
 $errors = array();

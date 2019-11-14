@@ -14,43 +14,59 @@ if (isset($_GET['username']) && empty($_GET['username']) === false) {
     
     if (user_exists($username) === true) {
         $user_id = user_id_from_username($username);
-        $profile_data = user_data($user_id, 'username', 'profile_pic');
+        $profile_data = user_data($user_id, 'username', 'profile_pic', 'about_me');
         ?>
 
     <h1><?php echo $profile_data['username']; ?>'s Profile:</h1>
 
-    <div class="profile-pic-wrap">
+    <div class="user-lookup-wrap">
+        
+        <div class="profile-pic-wrap">
+            <?php
+                if (empty($profile_data['profile_pic']) == false ) {
+            ?>
+                    <div class="profile-pic" style="background-image: url(<?php echo $profile_pic_path . $profile_data['profile_pic']; ?>);"> </div>
+            <?php
+                }
+            ?>
+
+        </div>
+    
+        <div class="user-info-wrap">
+
+        <!-- about me: -->
+        <div>
+            <?php
+                if (empty($profile_data['about_me']) == false ) {
+                    echo $profile_data['about_me'];
+                }
+            ?>
+        </div>
+
+
+
         <?php
-            if (empty($profile_data['profile_pic']) == false ) {
+        // add friend button if not already friends.
+
         ?>
-                <div class="profile-pic" style="background-image: url(<?php echo $profile_pic_path . $profile_data['profile_pic']; ?>);"> </div>
+        <form action="friends.php" method="POST">
+            <input type="hidden" name="askee" value="<?php echo $username; ?>">
+            <button>Send friend request</button>  
+        </form>
         <?php
-            }
-        ?>
-
-    </div>
 
 
-
-    <?php
-    // add friend button if not already friends.
-        
-    ?>
-    <form action="friends.php" method="POST">
-        <input type="hidden" name="askee" value="<?php echo $username; ?>">
-        <button>Send friend request</button>  
-    </form>
-    <?php
-        
-        
+        } else {
+            echo "<blockquote class='error'><h3>Error: User does not exist.</h3></blockquote>";
+        }
     } else {
-        echo "<blockquote class='error'><h3>Error: User does not exist.</h3></blockquote>";
+        header('Location: index.php');
+        exit();
     }
-} else {
-    header('Location: index.php');
-    exit();
-}
-?>
+    ?>
+    </div>
+    
+</div>
 
 
 
