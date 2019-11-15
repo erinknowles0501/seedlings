@@ -68,6 +68,31 @@ section {
     border-radius: 1.5vh;
 }
 
+.message {
+    border: 1px solid #CCC;
+    margin: 2vh 0;
+    padding: 3vh;
+}
+
+.message h4 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.message h4 p {
+    font-style: italic;
+    margin-left: 2vh;
+    font-size: 0.9rem;
+    display: inline-block;
+    font-weight: 400;
+}
+
+.message p {
+    margin: 0;
+    padding: 0;
+}
+
 .display-seed {
     border: 1px solid #CCC;
     margin: 1vh;
@@ -174,4 +199,15 @@ footer {
 
 .user-lookup-wrap {
     display: flex;
+}
+
+
+form ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+form li {
+    margin-bottom: 5vh;
 }
