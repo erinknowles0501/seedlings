@@ -25,7 +25,10 @@
             
         ?>
         <h1>Seedlings</h1>
-        <p>testing it!</p>
+        <p>
+            <?php if (logged_in() === true) { echo "Logged in as " . $user_data['username'] . ". Your food: " . $user_data['food']; }
+            else { echo "Hi there :P"; } ?>
+        </p>
 
 
 

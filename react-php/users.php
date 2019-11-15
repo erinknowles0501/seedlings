@@ -143,4 +143,18 @@ function has_friends() {
     }
 }
 
+function set_last_active() {
+    global $user_data;
+    global $session_user_id;
+    $today = date('Y-m-d');
+    
+    if ( $user_data['last_active'] < $today ) {
+        global $conn;
+        $sql = "UPDATE `users` SET `last_active` = '$today' WHERE `user_id` = $session_user_id";
+        mysqli_query($conn, $sql);
+        
+        change_food(10);
+    }
+}
+
 ?>

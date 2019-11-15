@@ -1,4 +1,30 @@
-        <div class="friend-wrap">
+// force error reporting apparently:
+ini_set('display_errors',1);
+error_reporting(E_ALL | E_STRICT);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+
+
+
+
+
+<?php echo "$seedling_id"; ?>
+
+
+
+echo "<form action='friends.php' method='POST'>
+            <input type='hidden' name='askee_id' value='".$profile_user_id.">
+            <button>Send friend request</button>  
+        </form>";
+
+
+
+
+
+
+
+
+<div class="friend-wrap">
             <div class="profile-pic-wrap">
                 <?php
                 // either asker_id or askee_id is $session_user_id. Get whatever the other one is.

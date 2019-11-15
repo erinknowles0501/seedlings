@@ -5,9 +5,7 @@
 <!-- CONTENT -->
 
 <h1>About</h1>
-<p>Well we're just testing for now you hold your horses</p>
-
-
+<p>Well, have you ever played Neopets? It's like that, but shitty.</p>
 
 
 
