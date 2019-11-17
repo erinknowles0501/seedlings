@@ -1,0 +1,221 @@
+/*
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+*/
+
+header .notice {
+    background: blue;
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding: 1.3rem;
+    font-size: 1rem;
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+
+header .notice a {
+    color: white;
+    text-decoration: underline;
+}
+
+header .notice a:hover {
+    text-decoration: none;
+}
+
+/*
+header .notice:before {
+    content: '';
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    background-color: red;
+    border-radius: 0.5rem;
+}
+*/
+
+blockquote {
+    font-style: normal;
+    padding: 3vh;
+}
+
+blockquote h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.error {
+    border-left-color: red;
+    background: #FFCC99;
+}
+
+.success {
+    border-left-color: green;
+    background: #DDFFDD;
+}
+
+.warning {
+    border-left-color: orange;
+}
+
+section {
+    margin: 4vh;
+    padding: 2vh;
+    border-radius: 1.5vh;
+}
+
+.message {
+    border: 1px solid #CCC;
+    margin: 2vh 0;
+    padding: 3vh;
+}
+
+.message h4 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.message h4 p {
+    font-style: italic;
+    margin-left: 2vh;
+    font-size: 0.9rem;
+    display: inline-block;
+    font-weight: 400;
+}
+
+.message p {
+    margin: 0;
+    padding: 0;
+}
+
+.display-seed {
+    border: 1px solid #CCC;
+    margin: 1vh;
+    text-align: center;
+}
+
+.seedlings-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+/*
+Okay for future reference you did something kind of cool here that I've never seen before. You wanted to make an empty div be as wide as its fluid-width container, and have its height be the same as its width. Height: 100% wasn't working. So: set width:100% and then the PADDING to 50% and 50% (it also worked with 50% and 25% and I don't know why). Remember to set box-sizing to border-box!
+Update: I wanted them a bit smaller so I tried width: 80%; padding: 40% 40% and it worked :)
+*/
+
+.seed-img {
+    width: 70%;
+    box-sizing: border-box;
+    height: auto;
+    padding: 35% 35%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+#seedImg {
+    padding: 2rem 0;
+    width: 30vmin;
+    height: 30vmin;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.profile-pic-wrap {
+    height: 30vmin;
+    width: 30vmin;
+    margin: 1vh;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profile-pic-wrap.request {
+    height: 15vmin;
+    width: 15vmin;
+    margin: 0;
+    margin-right: 2vh;
+}
+
+.profile-pic {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.request .profile-pic {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+}
+
+.request .profile-pic span {
+    color: white;
+    font-weight: 800;
+    text-shadow: 0 0 2rem black;
+}
+
+.request .profile-pic:hover {
+    background-size: 150%;
+}
+
+
+footer {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+/* .request.friend-wrap */
+
+.friend-request-wrap {
+    border: 1px solid #CCCCCC;
+    border-radius: 0.8rem;
+    padding: 1.4rem;
+    margin: 1.4rem;
+    max-width: 60%;
+    display: flex;
+}
+
+.friends-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.user-lookup-wrap {
+    display: flex;
+}
+
+
+form ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+form li {
+    margin-bottom: 5vh;
+}
+
+
+.messages-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    padding: 0;
+}

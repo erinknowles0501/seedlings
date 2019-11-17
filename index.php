@@ -1,40 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Babies ~</title>
-<meta charset="utf-8">
+<?php include 'init.php' ?>
 
-<script
-			  src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			  crossorigin="anonymous"></script>
+<?php include 'head.php' ?>
 
+<!-- CONTENT -->
 
-<script type="text/javascript" src="test.js"></script>
-
-</head>
-
-<body>
+<!-- can't do this until upload / feel like configuring sendmail. this is the email activation part.
+https://www.youtube.com/watch?v=erFZWX9aGUc&list=PLE134D877783367C7&index=25
+-->
 
 
+<?php 
 
 
-<div>
-<h1>Found new baby!!</h1>
-<p><b>Location:</b> Rogue's Roost</p>
-<p><b>Type:</b> Annoying</p>
-<hr>
-<h3>What shall we name it?</h3>
+if (isset($_GET['alreadyloggedin']) && empty($_GET['alreadyloggedin'])) {
+    echo "<blockquote class='warning'><h3>You have to log out before accessing that page.</h3>
+    </blockquote>";
+}
 
-<form action="index.php" method="post">
-<input id="nameField" name="nameField" type="text">
-<input id="submit" type="submit" value="go!">
-</form>
-
-</div>
+if (isset($_GET['registersuccess']) && empty($_GET['registersuccess'])) {
+    echo "<blockquote class='success'><h3>User registered!</h3><p>Check your email for the activation link. Once you have activated your account, please log in.</p></blockquote>";
+}
 
 
-<?php include 'test.php'; ?>
+if (logged_in() === true) {
+    include 'loggedIn.php';
+} else {
+    include 'loginForm.php';
+}
 
-</body>
-</html>
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+<?php include 'footer.php' ?>
