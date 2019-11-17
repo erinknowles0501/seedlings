@@ -211,3 +211,11 @@ form ul {
 form li {
     margin-bottom: 5vh;
 }
+
+
+.messages-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    padding: 0;
+}

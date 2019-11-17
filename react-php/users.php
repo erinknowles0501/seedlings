@@ -154,6 +154,7 @@ function set_last_active() {
         mysqli_query($conn, $sql);
         
         change_food(10);
+        header('refresh: 0');
     }
 }
 
