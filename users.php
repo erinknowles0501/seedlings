@@ -143,6 +143,8 @@ function has_friends() {
     }
 }
 
+
+
 function set_last_active() {
     global $user_data;
     global $session_user_id;
