@@ -13,7 +13,9 @@ global $conn;
 $sql = "SELECT * FROM `items` WHERE `owner_id` = $session_user_id";
 
 if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0) {
+    echo "<section class='items'>";
     display_items($session_user_id);
+    echo "</section>";
 } else {
     echo "No items.";
 }

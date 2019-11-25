@@ -17,14 +17,14 @@ function display_items($id) {
     
     foreach($items as $item) {
         $item_info = get_item_info_from_id($item['id']);
-        echo "<section><img src='"; 
-        echo $item_image_path . "/" . get_category_from_item_id($item['id']) . "/" . $item_info['image'];
+        echo "<div class='item'><img src='"; 
+        echo $item_image_path . "/" . get_category_from_category_id($item_info['category']) . "/" . $item_info['image'];
         echo "'><p><b>";
         echo item_id_to_name($item['type_id']);
         echo "</b>: ";
         echo "<i>";
         echo $item_info['description'];
-        echo "</i></p></section>";
+        echo "</i></p></div>";
     }
 }
 
@@ -34,7 +34,7 @@ function get_item_info_from_id($id) {
     return mysqli_fetch_assoc(mysqli_query($conn, $sql));
 }
 
-function get_category_from_item_id($id) {
+function get_category_from_category_id($id) {
     global $conn;
     $sql = "SELECT `name` FROM `item_categories` WHERE `id` = $id";
     $query = mysqli_query($conn, $sql);
