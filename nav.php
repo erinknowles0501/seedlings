@@ -2,6 +2,7 @@
     <ul>
         <li><a href="index.php">Home</a></li>
         <li><a href="about.php">About</a></li>
+    </ul>
 
         <!-- logged-in only pages! -->
         <?php 
@@ -18,6 +19,4 @@
         }
         ?>
 
-
-    </ul>
 </nav>

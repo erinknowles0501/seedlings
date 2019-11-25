@@ -19,6 +19,10 @@ header .notice a:hover {
     text-decoration: none;
 }
 
+nav {
+    display: flex;
+}
+
 
 blockquote {
     font-style: normal;
@@ -28,6 +32,10 @@ blockquote {
 blockquote h3 {
     margin: 0;
     padding: 0;
+}
+
+blockquote p {
+    margin: 0;
 }
 
 .error {
